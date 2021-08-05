@@ -19,8 +19,12 @@ function App() {
     event.preventDefault()
     console.log("DATA: ", data)
     axios({
+      cors: {
+        origin: "http://localhost:3000",
+        methods: ["POST"]
+      },
       method : "POST",
-      url: "http://localhost:3001/",
+      url: "http://localhost:3001/api",
       headers: {
         "Content-type" : "application/json",
       },
